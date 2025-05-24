@@ -10,32 +10,32 @@ const adventurer = {
     companion: {
       name: "Frank",
       type: "Flea",
-      inventory:["small hat", "sunglasses"]
+      inventory: ["small hat", "sunglasses"],
     },
   },
-  roll (mod=0){
-    const result= Math.floor(Math.random()* 20)+mod+1;
+  roll(mod = 0) {
+    const result = Math.floor(Math.random() * 20) + mod + 1;
     // console.log(`${this.name} rolled a ${result}`)
-  }
+  },
 };
 for (let item of adventurer.inventory) {
   // console.log(item);
 }
-adventurer.roll()
+adventurer.roll();
 
 //Part 2 Class Fantasy
 
 class Character {
-  constructor(name){
-this.name= name;
-this.health=100;
-this.inventory=[];
+  constructor(name) {
+    this.name = name;
+    this.health = 100;
+    this.inventory = [];
   }
-  static Max_Health =100;
+  static Max_Health = 100;
 
-  roll(mod=0){
-const result= Math.floor(Math.random()*20 + mod+1);
-console.log(`${this.name} rolled a ${result}`)
+  roll(mod = 0) {
+    const result = Math.floor(Math.random() * 20 + mod + 1);
+    console.log(`${this.name} rolled a ${result}`);
   }
 }
 // const Robin= new Character("Robin");
@@ -50,16 +50,17 @@ console.log(`${this.name} rolled a ${result}`)
 // robin.companion.roll();
 
 //Part 3: Class Features
-class Adventurer extends Character{
-constructor(name, role){
-  super(name);
-  this.role=role;
-  this.inventory.push("bedroll", "50 gold coins")
+class Adventurer extends Character {
+  constructor(name, role) {
+    super(name);
+    this.role = role;
+    this.inventory.push("bedroll", "50 gold coins");
+  }
+  scout() {
+    console.log(`${this.name} is scouting ahead...`);
+    super.roll();
+  }
 }
-scout(){
-  console.log(`${this.name} is scouting ahead...`)
-  super.roll();
-}
-}
-
-
+// What else should an adventurer be able to do? What other properties should they have?
+// Next, create a Companion class with properties and methods specific to the companions.
+// Finally, change the declaration of Robin and the companions to use the new Adventurer and Companion classes.
