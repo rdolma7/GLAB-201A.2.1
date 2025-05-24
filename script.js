@@ -49,6 +49,17 @@ console.log(`${this.name} rolled a ${result}`)
 // robin.roll();
 // robin.companion.roll();
 
-
+//Part 3: Class Features
+class Adventurer extends Character{
+constructor(name, role){
+  super(name);
+  this.role=role;
+  this.inventory.push("bedroll", "50 gold coins")
+}
+scout(){
+  console.log(`${this.name} is scouting ahead...`)
+  super.roll();
+}
+}
 
 
